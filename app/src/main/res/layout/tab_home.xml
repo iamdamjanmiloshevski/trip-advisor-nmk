@@ -7,10 +7,10 @@
 
     <com.google.android.material.tabs.TabLayout android:layout_width="0dp"
                                              android:layout_height="wrap_content"
-                                             app:tabSelectedTextColor="@color/sealblue"
+                                             app:tabSelectedTextColor="@color/seablue"
                                              app:tabMode="fixed"
                                              app:tabBackground="@color/colorPrimaryDark"
-                                             app:tabTextColor="@color/sealgreen"
+                                             app:tabTextColor="@color/seagreen"
                                              android:background="@color/colorPrimaryDark"
                                              android:id="@+id/tv_home_tabs"
                                              app:layout_constraintTop_toTopOf="parent"

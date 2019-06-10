@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_main"
     tools:context=".activities.MainActivity">
 
-   <androidx.viewpager.widget.ViewPager android:layout_width="match_parent"
+   <com.iamdamjanmiloshevski.makedoniko.utils.SwipeLockableViewPager android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:id="@+id/vp_pages"/>
     <com.google.android.material.bottomnavigation.BottomNavigationView  android:id="@+id/nav_view"

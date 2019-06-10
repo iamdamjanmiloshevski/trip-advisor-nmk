@@ -3,6 +3,6 @@
     <color name="colorPrimary">#BF360C</color>
     <color name="colorPrimaryDark">#D20000</color>
     <color name="colorAccent">#FFE600</color>
-    <color name="sealgreen">#105011</color>
-    <color name="sealblue">#96C5E0</color>
+    <color name="seagreen">#105011</color>
+    <color name="seablue">#96C5E0</color>
 </resources>

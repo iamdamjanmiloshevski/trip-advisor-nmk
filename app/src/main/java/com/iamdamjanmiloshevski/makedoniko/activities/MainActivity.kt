@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.iamdamjanmiloshevski.makedoniko.R
 import com.iamdamjanmiloshevski.makedoniko.adapters.ApplicationViewPagerAdapter
-import com.iamdamjanmiloshevski.makedoniko.fragments.home.HomeFragment
+import com.iamdamjanmiloshevski.makedoniko.fragments.main.HomeFragment
 import com.iamdamjanmiloshevski.makedoniko.fragments.main.AccountFragment
 import com.iamdamjanmiloshevski.makedoniko.fragments.main.InfoFragment
 import com.iamdamjanmiloshevski.makedoniko.fragments.main.PointsOfInterestFragment
