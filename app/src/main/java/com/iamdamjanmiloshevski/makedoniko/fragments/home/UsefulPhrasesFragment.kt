@@ -15,9 +15,7 @@ class UsefulPhrasesFragment : BaseHomeFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         fragmentView = getFragmentView(context, container, false, savedInstanceState)
-        fragmentView.title.apply {
-            text="UsefulPhrases Fragment"
-        }
+
         return fragmentView
     }
     companion object {

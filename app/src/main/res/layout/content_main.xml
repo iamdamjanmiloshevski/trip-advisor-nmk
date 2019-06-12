@@ -10,8 +10,8 @@
     tools:context=".activities.MainActivity">
 
    <com.iamdamjanmiloshevski.makedoniko.utils.SwipeLockableViewPager android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:id="@+id/vp_pages"/>
+                                                                     android:layout_height="match_parent"
+                                                                     android:id="@+id/vp_pages"/>
     <com.google.android.material.bottomnavigation.BottomNavigationView  android:id="@+id/nav_view"
                                                                         android:layout_width="0dp"
                                                                         android:layout_height="wrap_content"

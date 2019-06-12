@@ -1,7 +1,6 @@
 package com.iamdamjanmiloshevski.makedoniko.viewholders
 
 import android.view.View
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.iamdamjanmiloshevski.makedoniko.models.Phrase
 import kotlinx.android.synthetic.main.word_item.view.*

@@ -7,12 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.iamdamjanmiloshevski.makedoniko.R
 import com.iamdamjanmiloshevski.makedoniko.models.Phrase
 import com.iamdamjanmiloshevski.makedoniko.viewholders.PhraseViewHolder
-import java.math.MathContext
 
 /** Created by Damjan on 11.6.2019
 Project: trip-advisor-nmk
  **/
-class PhrasesRecyclerViewAdapter(private var mContext: Context, private var mPhrases: MutableList<Phrase>) :
+class PhrasesRecyclerViewAdapter(private var mContext: Context, private var mPhrases: List<Phrase>?) :
     RecyclerView.Adapter<PhraseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhraseViewHolder {
@@ -22,12 +21,12 @@ class PhrasesRecyclerViewAdapter(private var mContext: Context, private var mPhr
 
 
     override fun getItemCount(): Int {
-        return mPhrases.size
+        return mPhrases!!.size
     }
 
 
     override fun onBindViewHolder(holder: PhraseViewHolder, position: Int) {
-        val phrase = mPhrases[position]
+        val phrase = mPhrases!![position]
         phrase.let {
             holder.bind(it)
         }
