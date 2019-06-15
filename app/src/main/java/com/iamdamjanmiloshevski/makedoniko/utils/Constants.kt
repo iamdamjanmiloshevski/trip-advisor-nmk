@@ -4,5 +4,9 @@ package com.iamdamjanmiloshevski.makedoniko.utils
 Project: trip-advisor-nmk
  **/
 object Constants {
+    //UI constants
     const val HOME_PAGES = 4
+    //Repository constants
+    const val PHRASES_COLLECTION = "phrases"
+    const val CATEGORY = "category"
 }

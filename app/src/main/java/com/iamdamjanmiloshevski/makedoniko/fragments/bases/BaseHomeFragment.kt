@@ -16,7 +16,7 @@ import java.util.*
 /** Created by Damjan on 09.6.2019
 Project: TripAdvisorNorthMacedonia
  **/
-abstract class BaseHomeFragment : Fragment(),Observer<List<Phrase>> {
+abstract class BaseHomeFragment : Fragment(), Observer<List<Phrase>> {
 
     fun getFragmentView(
         context: Context?,
@@ -27,14 +27,15 @@ abstract class BaseHomeFragment : Fragment(),Observer<List<Phrase>> {
         return LayoutInflater.from(context)
             .inflate(com.iamdamjanmiloshevski.makedoniko.R.layout.tab_home_child, viewGroup, attachToRoot)
     }
+
     abstract fun registerObservers()
-    abstract fun initComponents()
     abstract fun removeObservers()
-    fun showNoData(show:Boolean,rv_data:RecyclerView,tv_msg:AppCompatTextView){
-        if(show){
+    abstract fun initComponents()
+    fun showNoData(show: Boolean, rv_data: RecyclerView, tv_msg: AppCompatTextView) {
+        if (show) {
             rv_data.visibility = View.GONE
             tv_msg.visibility = View.VISIBLE
-        }else{
+        } else {
             rv_data.visibility = View.VISIBLE
             tv_msg.visibility = View.GONE
         }

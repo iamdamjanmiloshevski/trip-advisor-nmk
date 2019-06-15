@@ -52,18 +52,26 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = ContextCompat.getColor(this,
+        window.statusBarColor = ContextCompat.getColor(
+            this,
             R.color.colorPrimaryDark
         )
+        initComponents()
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-        mAdapter = ApplicationViewPagerAdapter(supportFragmentManager)
-       mAdapter.addFragment(HomeFragment.getInstance(), "Home")
-        mAdapter.addFragment(PointsOfInterestFragment.getInstance(), "Points of Interest")
-        mAdapter.addFragment(InfoFragment.getInstance(), "Info")
-        mAdapter.addFragment(RequestWordFragment.getInstance(), "Request word")
-        mAdapter.addFragment(AccountFragment.getInstance(), "Account")
-        vp_pages.adapter = mAdapter
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+    }
+
+    private fun initComponents() {
+        mAdapter = ApplicationViewPagerAdapter(supportFragmentManager)
+        mAdapter.addFragment(HomeFragment.getInstance(), getString(R.string.home_fragment_title))
+        mAdapter.addFragment(
+            PointsOfInterestFragment.getInstance(),
+            getString(R.string.points_of_interest_fragment_title)
+        )
+        mAdapter.addFragment(InfoFragment.getInstance(), getString(R.string.info_fragment_title))
+        mAdapter.addFragment(RequestWordFragment.getInstance(), getString(R.string.request_word_fragment_title))
+        mAdapter.addFragment(AccountFragment.getInstance(), getString(R.string.account_fragment_title))
+        vp_pages.adapter = mAdapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

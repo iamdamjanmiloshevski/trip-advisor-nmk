@@ -22,6 +22,7 @@ class HomeFragment : BaseFragment() {
     override fun getLayoutId(): Int {
         return R.layout.tab_home
     }
+
     private lateinit var mAdapter: ApplicationViewPagerAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = getFragmentView(context, container, false, savedInstanceState)
@@ -34,10 +35,10 @@ class HomeFragment : BaseFragment() {
 
     private fun initAdapter() {
         mAdapter = ApplicationViewPagerAdapter(fragmentManager)
-        mAdapter.addFragment(AllPhrasesFragment.getInstance(),"All Phrases")
-        mAdapter.addFragment(GreetingsFragment.getInstance(), "Greetings")
-        mAdapter.addFragment(MostUsedPhrasesFragment.getInstance(), "Most Used")
-        mAdapter.addFragment(UsefulPhrasesFragment.getInstance(), "Useful phrases")
+        mAdapter.addFragment(AllPhrasesFragment.getInstance(), getString(R.string.all_phrases_fragment_title))
+        mAdapter.addFragment(GreetingsFragment.getInstance(), getString(R.string.greetings_fragment_title))
+        mAdapter.addFragment(MostUsedPhrasesFragment.getInstance(), getString(R.string.most_used_fragment_title))
+        mAdapter.addFragment(UsefulPhrasesFragment.getInstance(), getString(R.string.useful_phrases_fragment_title))
     }
 
     companion object {

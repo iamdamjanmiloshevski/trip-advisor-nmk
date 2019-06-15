@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Trip Advisor North Macedonia</string>
     <string name="action_settings">Settings</string>
+    <string name="home_fragment_title">Home</string>
+    <string name="points_of_interest_fragment_title">Points of Interest</string>
+    <string name="info_fragment_title">Info</string>
+    <string name="request_word_fragment_title">Request word</string>
+    <string name="account_fragment_title">Account</string>
+    <string name="all_phrases_fragment_title">All Phrases</string>
+    <string name="greetings_fragment_title">Greetings</string>
+    <string name="most_used_fragment_title">Most Used</string>
+    <string name="useful_phrases_fragment_title">Useful phrases</string>
 </resources>

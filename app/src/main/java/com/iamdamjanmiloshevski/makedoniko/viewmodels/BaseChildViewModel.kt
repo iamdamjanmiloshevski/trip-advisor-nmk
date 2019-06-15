@@ -11,7 +11,6 @@ Project: trip-advisor-nmk
  **/
 abstract class BaseChildViewModel : ViewModel() {
    protected var phrases: MutableLiveData<List<Phrase>> = MutableLiveData()
-    protected var phrasesByCategory: MutableLiveData<List<Phrase>> = MutableLiveData()
     protected var mRepository:FirestoreRepository = FirestoreRepository.getInstance()
 
     abstract fun getPhrasesByCategory(category:Int): LiveData<List<Phrase>>
