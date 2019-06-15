@@ -14,6 +14,7 @@ Project: trip-advisor-nmk
 class PhrasesRecyclerViewAdapter(private var mContext: Context, private var mPhrases: List<Phrase>?) :
     RecyclerView.Adapter<PhraseViewHolder>() {
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhraseViewHolder {
         val view = LayoutInflater.from(mContext).inflate(R.layout.word_item, parent, false)
         return PhraseViewHolder(view)

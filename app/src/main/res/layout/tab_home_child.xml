@@ -3,8 +3,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-   <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
-                                              android:layout_height="match_parent"
-                                                android:id="@+id/rv_phrases"/>
+    <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                               android:layout_height="match_parent"
+                                               android:id="@+id/rv_phrases"/>
+    <androidx.appcompat.widget.AppCompatTextView android:layout_width="wrap_content"
+                                                 android:layout_height="wrap_content"
+                                                 android:layout_centerInParent="true"
+                                                 android:id="@+id/tv_no_data"
+                                                 android:visibility="gone"
+                                                 android:text="No data available"/>
 
 </RelativeLayout>

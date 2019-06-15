@@ -11,13 +11,10 @@ Project: trip-advisor-nmk
 class PhraseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
     fun bind(phrase: Phrase){
-        with(phrase){
-            itemView.tv_english.text = phrase.description
-            val translation = phrase.tranlationMacedonian
-            translation.let {
-                itemView.tv_macedonian_informal.text = it?.informal
-                itemView.tv_macedonian_formal.text = it?.formal
-            }
-        }
+        itemView.tv_english.text = phrase.description
+        val translation = phrase.tranlation
+        itemView.tv_macedonian_formal.text = translation?.formal
+        itemView.tv_macedonian_informal.text = translation?.informal
+
     }
 }

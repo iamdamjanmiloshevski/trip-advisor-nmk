@@ -10,4 +10,4 @@ data class Phrase(
     var category: Int = 0,
     var description:String = "",
     var englishTransription:String = "",
-    var tranlationMacedonian: Translation? = null)
+    var tranlation: Translation? = null)
