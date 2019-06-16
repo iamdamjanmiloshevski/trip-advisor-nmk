@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TabHost
 import com.iamdamjanmiloshevski.makedoniko.R
 import com.iamdamjanmiloshevski.makedoniko.adapters.ApplicationViewPagerAdapter
 import com.iamdamjanmiloshevski.makedoniko.fragments.bases.BaseFragment

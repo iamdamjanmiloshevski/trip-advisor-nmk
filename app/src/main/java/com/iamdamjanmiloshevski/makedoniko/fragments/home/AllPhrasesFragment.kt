@@ -12,6 +12,7 @@ import com.iamdamjanmiloshevski.makedoniko.adapters.PhrasesRecyclerViewAdapter
 import com.iamdamjanmiloshevski.makedoniko.fragments.bases.BaseHomeFragment
 import com.iamdamjanmiloshevski.makedoniko.models.Phrase
 import com.iamdamjanmiloshevski.makedoniko.viewmodels.AllPhrasesViewModel
+import kotlinx.android.synthetic.main.tab_home_child.*
 import kotlinx.android.synthetic.main.tab_home_child.view.*
 
 /** Created by Damjan on 10.6.2019
@@ -26,7 +27,7 @@ class AllPhrasesFragment : BaseHomeFragment() {
         mViewModel = ViewModelProviders.of(activity!!).get(AllPhrasesViewModel::class.java)
         fragmentView.rv_phrases.layoutManager = LinearLayoutManager(context)
         fragmentView.rv_phrases.adapter = PhrasesRecyclerViewAdapter(context!!, phrases)
-        showNoData(true, fragmentView.rv_phrases, fragmentView.tv_no_data)
+        fragmentView.progressbar.visibility = View.VISIBLE
     }
 
     override fun removeObservers() {
@@ -38,11 +39,13 @@ class AllPhrasesFragment : BaseHomeFragment() {
      * @param data  The new data
      */
     override fun onChanged(data: List<Phrase>?) {
+        fragmentView.progressbar.visibility=View.VISIBLE
         data.let {
             phrases.addAll(it as List<Phrase>)
             Log.i(TAG, "${phrases.size}")
             if (phrases.isNotEmpty()) {
                 fragmentView.rv_phrases.adapter?.notifyDataSetChanged()
+                fragmentView.progressbar.visibility=View.GONE
                 showNoData(false, fragmentView.rv_phrases, fragmentView.tv_no_data)
             } else {
                 showNoData(true, fragmentView.rv_phrases, fragmentView.tv_no_data)

@@ -29,7 +29,11 @@ class MostUsedPhrasesFragment : BaseHomeFragment() {
         mViewModel = ViewModelProviders.of(activity!!).get(MostUsedPhrasesViewModel::class.java)
         fragmentView.rv_phrases.layoutManager = LinearLayoutManager(context)
         fragmentView.rv_phrases.adapter = PhrasesRecyclerViewAdapter(context!!, phrases)
-        showNoData(true,fragmentView.rv_phrases,fragmentView.tv_no_data)
+        fragmentView.progressbar.visibility = View.VISIBLE
+        if(phrases.isEmpty()){
+            fragmentView.progressbar.visibility=View.GONE
+            showNoData(true, fragmentView.rv_phrases, fragmentView.tv_no_data)
+        }
     }
 
     override fun removeObservers() {
@@ -41,11 +45,13 @@ class MostUsedPhrasesFragment : BaseHomeFragment() {
      * @param data  The new data
      */
     override fun onChanged(data: List<Phrase>?) {
+      fragmentView.progressbar.visibility=View.VISIBLE
         data.let {
             phrases.addAll(it as List<Phrase>)
             Log.i(TAG,"${phrases.size}")
             if(phrases.isNotEmpty()){
                 fragmentView.rv_phrases.adapter?.notifyDataSetChanged()
+                fragmentView.progressbar.visibility=View.GONE
                 showNoData(false,fragmentView.rv_phrases,fragmentView.tv_no_data)
             }else{
                 showNoData(true,fragmentView.rv_phrases,fragmentView.tv_no_data)

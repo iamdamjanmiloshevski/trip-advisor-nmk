@@ -5,5 +5,7 @@ Project: trip-advisor-nmk
  **/
 enum class PhraseCategory(val category: Int) {
     GREETINGS(0),
-    COMMON(1)
+    MOST_USED(1),
+    USEFUL(2)
+
 }
