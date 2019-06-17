@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 Project: trip-advisor-nmk
  **/
 
-class ApplicationViewPagerAdapter(fragmentManager: FragmentManager?) : FragmentPagerAdapter(fragmentManager) {
+class ApplicationViewPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
     private val fragments = mutableListOf<Fragment>()
     private val titles = mutableListOf<String>()
 

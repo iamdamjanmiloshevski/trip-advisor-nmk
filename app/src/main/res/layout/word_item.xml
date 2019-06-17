@@ -37,7 +37,8 @@
                                                                  android:textStyle="bold"
                                                                  android:id="@+id/tv_english"
                                                                  android:layout_centerHorizontal="true"
-                                                                 android:textColor="#000"/>
+                                                                 android:textColor="#000"
+                                                                android:fontFamily="@font/amiko_semibold"/>
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                                   android:layout_below="@id/tv_english"
                                   android:layout_marginStart="5dp"
@@ -51,6 +52,7 @@
                                                                      android:textStyle="bold"
                                                                      android:gravity="center"
                                                                      android:layout_gravity="center"
+                                                                     android:fontFamily="@font/amiko"
                                                                      android:id="@+id/tv_transcription_informal"
                         />
                         <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
@@ -59,6 +61,7 @@
                                                                      android:text="Dobredoyde (frm.)"
                                                                      android:textStyle="bold"
                                                                      android:layout_gravity="center"
+                                                                     android:fontFamily="@font/amiko"
                                                                      android:gravity="center"
                                                                      android:id="@+id/tv_transcription_formal"/>
                     </LinearLayout>
@@ -71,16 +74,18 @@
                     <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                                  android:layout_height="match_parent"
                                                                  android:layout_weight="2"
+                                                                 android:fontFamily="@font/amiko_semibold"
                                                                  android:text="Description"/>
                     <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                                  android:layout_height="match_parent"
                                                                  android:id="@+id/tv_description"
-                                                                 android:layout_weight="1"
-                                                                 android:text="Welcoming greeting"/>
+                                                                 android:fontFamily="@font/amiko"
+                                                                 android:layout_weight="1"/>
                 </LinearLayout>
                 <androidx.appcompat.widget.AppCompatTextView android:layout_width="wrap_content"
                                                              android:layout_height="wrap_content"
                                                              android:text="Translation"
+                                                             android:fontFamily="@font/amiko_semibold"
                                                              android:layout_marginTop="5dp"
                                                              android:id="@+id/tv_translation"
                                                              android:layout_below="@id/lyt_description"/>
@@ -99,12 +104,14 @@
                         <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                                      android:layout_height="match_parent"
                                                                      android:layout_weight="2"
+                                                                     android:fontFamily="@font/amiko_semibold"
                                                                      android:text="Informal"/>
                         <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                                      android:layout_height="match_parent"
                                                                      android:layout_weight="1"
+                                                                     android:fontFamily="@font/amiko"
                                                                      android:id="@+id/tv_translation_inf"
-                                                                     android:text="Welcoming greeting"/>
+                                                                    />
                     </LinearLayout>
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                                   android:weightSum="3"
@@ -115,12 +122,13 @@
                         <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                                      android:layout_height="match_parent"
                                                                      android:layout_weight="2"
+                                                                     android:fontFamily="@font/amiko_semibold"
                                                                      android:text="Formal"/>
                         <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                                      android:layout_height="wrap_content"
                                                                      android:layout_weight="1"
-                                                                     android:id="@+id/tv_translation_frm"
-                                                                     android:text="Welcoming greeting"/>
+                                                                     android:fontFamily="@font/amiko"
+                                                                     android:id="@+id/tv_translation_frm"/>
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>

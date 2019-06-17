@@ -14,6 +14,7 @@ import com.iamdamjanmiloshevski.makedoniko.fragments.home.GreetingsFragment
 import com.iamdamjanmiloshevski.makedoniko.fragments.home.MostUsedPhrasesFragment
 import com.iamdamjanmiloshevski.makedoniko.fragments.home.UsefulPhrasesFragment
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.HOME_PAGES
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.tab_home.view.*
 
 /** Created by Damjan on 09.6.2019
@@ -27,6 +28,7 @@ class HomeFragment : BaseFragment() {
     private lateinit var mAdapter: ApplicationViewPagerAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = getFragmentView(context, container, false, savedInstanceState)
+        setToolbar(activity!!.toolbar,"Home")
         initAdapter()
         view.vp_home_pages.adapter = mAdapter
         view.vp_home_pages.offscreenPageLimit = HOME_PAGES
@@ -35,7 +37,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun initAdapter() {
-        mAdapter = ApplicationViewPagerAdapter(fragmentManager)
+        mAdapter = ApplicationViewPagerAdapter(childFragmentManager)
         mAdapter.addFragment(AllPhrasesFragment.getInstance(), getString(R.string.all_phrases_fragment_title))
         mAdapter.addFragment(GreetingsFragment.getInstance(), getString(R.string.greetings_fragment_title))
         mAdapter.addFragment(MostUsedPhrasesFragment.getInstance(), getString(R.string.most_used_fragment_title))

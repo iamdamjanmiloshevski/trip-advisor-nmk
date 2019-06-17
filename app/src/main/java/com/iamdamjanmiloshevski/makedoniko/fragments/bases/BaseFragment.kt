@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 
 /** Created by Damjan on 09.6.2019
@@ -22,4 +23,7 @@ abstract class BaseFragment : Fragment(){
     }
 
     abstract fun getLayoutId(): Int
+    fun setToolbar(toolbar: Toolbar, title: String) {
+        toolbar.title = title
+    }
 }

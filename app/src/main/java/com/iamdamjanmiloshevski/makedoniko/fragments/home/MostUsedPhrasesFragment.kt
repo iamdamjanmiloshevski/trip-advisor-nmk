@@ -46,17 +46,14 @@ class MostUsedPhrasesFragment : BaseHomeFragment() {
      */
     override fun onChanged(data: List<Phrase>?) {
       fragmentView.progressbar.visibility=View.VISIBLE
-        data.let {
-            phrases.addAll(it as List<Phrase>)
-            Log.i(TAG,"${phrases.size}")
-            if(phrases.isNotEmpty()){
-                fragmentView.rv_phrases.adapter?.notifyDataSetChanged()
-                fragmentView.progressbar.visibility=View.GONE
-                showNoData(false,fragmentView.rv_phrases,fragmentView.tv_no_data)
-            }else{
-                showNoData(true,fragmentView.rv_phrases,fragmentView.tv_no_data)
-            }
-        }
+        getData(
+            fragmentView.rv_phrases,
+            fragmentView.rv_phrases.adapter as PhrasesRecyclerViewAdapter,
+            fragmentView.tv_no_data,
+            fragmentView.progressbar,
+            data,
+            phrases
+        )
     }
 
     private lateinit var fragmentView: View

@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.iamdamjanmiloshevski.makedoniko.R
 import com.iamdamjanmiloshevski.makedoniko.adapters.ApplicationViewPagerAdapter
@@ -18,7 +20,8 @@ import com.iamdamjanmiloshevski.makedoniko.fragments.main.RequestWordFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
+
     private lateinit var mAdapter: ApplicationViewPagerAdapter
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
