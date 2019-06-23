@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:gravity="start"
+      android:layout_gravity="start" >
+    <item android:id="@+id/sp_city"
+          android:title="Choose city"
+          app:showAsAction="always"
+          app:actionViewClass="androidx.appcompat.widget.AppCompatSpinner"/>
+</menu>

@@ -32,7 +32,6 @@
                                 android:id="@+id/lyt_main_word">
                     <androidx.appcompat.widget.AppCompatTextView android:layout_width="wrap_content"
                                                                  android:layout_height="wrap_content"
-                                                                 android:text="Welcome"
                                                                  android:textSize="22sp"
                                                                  android:textStyle="bold"
                                                                  android:id="@+id/tv_english"
@@ -48,7 +47,6 @@
                         <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                                      android:layout_height="match_parent"
                                                                      android:layout_weight="1"
-                                                                     android:text="Dobredoyde (inf.)"
                                                                      android:textStyle="bold"
                                                                      android:gravity="center"
                                                                      android:layout_gravity="center"
@@ -58,7 +56,6 @@
                         <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                                      android:layout_height="match_parent"
                                                                      android:layout_weight="1"
-                                                                     android:text="Dobredoyde (frm.)"
                                                                      android:textStyle="bold"
                                                                      android:layout_gravity="center"
                                                                      android:fontFamily="@font/amiko"
@@ -133,5 +130,5 @@
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
 

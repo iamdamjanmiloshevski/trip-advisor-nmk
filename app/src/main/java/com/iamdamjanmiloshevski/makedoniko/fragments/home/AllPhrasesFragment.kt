@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.iamdamjanmiloshevski.makedoniko.adapters.PhrasesRecyclerViewAdapter
 import com.iamdamjanmiloshevski.makedoniko.fragments.bases.BaseHomeFragment
 import com.iamdamjanmiloshevski.makedoniko.models.Phrase
-import com.iamdamjanmiloshevski.makedoniko.viewmodels.AllPhrasesViewModel
+import com.iamdamjanmiloshevski.makedoniko.viewmodels.home.AllPhrasesHomeViewModel
 import kotlinx.android.synthetic.main.tab_home_child.view.*
 
 /** Created by Damjan on 10.6.2019
@@ -21,7 +21,7 @@ class AllPhrasesFragment : BaseHomeFragment() {
     }
 
     override fun initComponents() {
-        mViewModel = ViewModelProviders.of(activity!!).get(AllPhrasesViewModel::class.java)
+        mViewModel = ViewModelProviders.of(activity!!).get(AllPhrasesHomeViewModel::class.java)
         fragmentView.rv_phrases.layoutManager = LinearLayoutManager(context)
         fragmentView.rv_phrases.adapter = PhrasesRecyclerViewAdapter(context!!, phrases)
         fragmentView.progressbar.visibility = View.VISIBLE
@@ -48,7 +48,7 @@ class AllPhrasesFragment : BaseHomeFragment() {
     }
 
     private lateinit var fragmentView: View
-    private lateinit var mViewModel: AllPhrasesViewModel
+    private lateinit var mViewModel: AllPhrasesHomeViewModel
     private var phrases = mutableListOf<Phrase>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

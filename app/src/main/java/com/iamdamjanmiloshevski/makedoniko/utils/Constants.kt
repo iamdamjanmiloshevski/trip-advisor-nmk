@@ -9,4 +9,6 @@ object Constants {
     //Repository constants
     const val PHRASES_COLLECTION = "phrases"
     const val CATEGORY = "category"
+    const val LANDMARKS_COLLECTION = "landmarks"
+    const val CITY_NAME = "cityName"
 }

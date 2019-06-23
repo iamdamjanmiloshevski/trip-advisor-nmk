@@ -1,4 +1,4 @@
-package com.iamdamjanmiloshevski.makedoniko.viewmodels
+package com.iamdamjanmiloshevski.makedoniko.viewmodels.home
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -9,20 +9,9 @@ import com.iamdamjanmiloshevski.makedoniko.models.Phrase
 /** Created by Damjan on 15.6.2019
 Project: trip-advisor-nmk
  **/
-/**
- * ViewModel used to display all phrases in AllPhrasesFragment
- */
-class AllPhrasesViewModel : BaseChildViewModel(){
-
-    /**
-     * not used
-     */
-    override fun getPhrasesByCategory(category:Int): LiveData<List<Phrase>> {
-        return MutableLiveData<List<Phrase>>()
-    }
-
-    override fun getPhrases(): LiveData<List<Phrase>> {
-        mRepository.getPhrases().addSnapshotListener { value, e ->
+class GreetingsPhrasesHomeViewModel : BaseChildHomeViewModel(){
+    override fun getPhrasesByCategory(category: Int): LiveData<List<Phrase>> {
+        mRepository.getPhrasesByCategory(category).addSnapshotListener { value, e ->
             if (e != null) {
                 Log.w("TAG", "Listen failed", e)
                 phrases.value = null
@@ -59,4 +48,10 @@ class AllPhrasesViewModel : BaseChildViewModel(){
         return phrases
     }
 
+    /**
+     * not used
+     */
+    override fun getPhrases(): LiveData<List<Phrase>> {
+        return MutableLiveData<List<Phrase>>()
+    }
 }

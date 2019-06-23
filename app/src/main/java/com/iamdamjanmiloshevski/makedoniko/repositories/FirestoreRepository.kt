@@ -5,6 +5,8 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.CATEGORY
+import com.iamdamjanmiloshevski.makedoniko.utils.Constants.CITY_NAME
+import com.iamdamjanmiloshevski.makedoniko.utils.Constants.LANDMARKS_COLLECTION
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.PHRASES_COLLECTION
 
 /** Created by Damjan on 10.6.2019
@@ -22,10 +24,16 @@ class FirestoreRepository {
             return instance as FirestoreRepository
         }
     }
-    fun getPhrases():CollectionReference{
+
+    fun getPhrases(): CollectionReference {
         return database.collection(PHRASES_COLLECTION)
     }
-    fun getPhrasesByCategory(category: Int):Query{
-        return database.collection(PHRASES_COLLECTION).whereEqualTo(CATEGORY,category)
+
+    fun getPhrasesByCategory(category: Int): Query {
+        return database.collection(PHRASES_COLLECTION).whereEqualTo(CATEGORY, category)
+    }
+
+    fun getLandmarksForCity(city: String): Query {
+        return database.collection(LANDMARKS_COLLECTION).whereEqualTo(CITY_NAME, city)
     }
 }

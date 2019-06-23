@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity(){
         mAdapter.addFragment(RequestWordFragment.getInstance(), getString(R.string.request_word_fragment_title))
         mAdapter.addFragment(AccountFragment.getInstance(), getString(R.string.account_fragment_title))
         vp_pages.adapter = mAdapter
+        vp_pages.currentItem = 0
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
