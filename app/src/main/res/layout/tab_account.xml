@@ -1,18 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="150dp"
+                            android:background="@drawable/ohrid" android:weightSum="3"
+                            android:id="@+id/lyt_header">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:layout_alignParentBottom="true"
+                              android:layout_alignParentStart="true"
+                              android:weightSum="2"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="10dp"
+                              android:layout_toStartOf="@id/iv_user_avatar">
+                    <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                                 android:layout_height="0dp"
+                                                                 android:text="Damjan Miloshevski"
+                                                                 android:textSize="24sp"
+                                                                 android:gravity="center"
+                                                                 android:textColor="#000"
+                                                                 android:fontFamily="@font/amiko_bold"
+                                                                 android:id="@+id/tv_user_name"
+                                                                 android:layout_weight="1"/>
+                    <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                                 android:layout_height="0dp"
+                                                                 android:text="d.miloshevski@gmail.com"
+                                                                 android:textSize="18sp"
+                                                                 android:gravity="center"
+                                                                 android:textColor="#000"
+                                                                 android:fontFamily="@font/amiko_semibold"
+                                                                 android:id="@+id/tv_user_email"
+                                                                 android:layout_weight="1"/>
+                </LinearLayout>
+                <de.hdodenhof.circleimageview.CircleImageView android:layout_width="65dp"
+                                                              android:layout_height="65dp"
+                                                              android:layout_alignParentEnd="true"
+                                                              android:layout_alignParentBottom="true"
+                                                              android:layout_centerVertical="true"
+                                                              android:layout_marginBottom="15dp"
+                                                              android:layout_marginEnd="10dp"
+                                                              android:id="@+id/iv_user_avatar"
+                                                              android:src="@drawable/ic_account"/>
+            </RelativeLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView android:layout_width="wrap_content"
-                                                 android:layout_height="wrap_content"
-                                                 android:gravity="center"
-                                                 android:textSize="20sp"
-                                                 android:id="@+id/tv_title"
-                                                 app:layout_constraintTop_toTopOf="parent"
-                                                 app:layout_constraintBottom_toBottomOf="parent"
-                                                 app:layout_constraintStart_toStartOf="parent"
-                                                 app:layout_constraintHorizontal_bias="0.5"
-                                                 app:layout_constraintEnd_toEndOf="parent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatTextView android:layout_width="wrap_content"
+                                                         android:layout_height="wrap_content"
+                                                         android:layout_alignParentStart="true"
+                                                         android:layout_below="@id/lyt_header"
+                                                         android:text="Account"
+                                                         android:layout_marginStart="15dp"
+                                                         android:layout_marginTop="10dp"
+                                                         android:layout_marginBottom="10dp"
+                                                         android:id="@+id/tv_acc_info"/>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_acc_info"
+                            android:id="@+id/lyt_account"
+                            android:background="@drawable/rounded_corners"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp">
+                <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Password and security"
+                                                             android:padding="10dp"
+                                                             android:id="@+id/tv_pwd_security"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                      android:layout_below="@id/tv_pwd_security"
+                      android:id="@+id/divider0" android:layout_marginStart="10dp"
+                      android:layout_marginEnd="10dp"/>
+                <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Privacy policy"
+                                                             android:padding="10dp"
+                                                             android:layout_below="@id/divider0"
+                                                             android:id="@+id/tv_privacy"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                      android:layout_below="@id/tv_privacy"
+                      android:id="@+id/divider1" android:layout_marginStart="10dp"
+                      android:layout_marginEnd="10dp"/>
+                <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Terms of Use"
+                                                             android:padding="10dp"
+                                                             android:textStyle="italic"
+                                                             android:layout_below="@id/divider1"
+                                                             android:id="@+id/tv_terms"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                      android:layout_below="@id/tv_terms"
+                      android:id="@+id/divider2" android:layout_marginStart="10dp"
+                      android:layout_marginEnd="10dp"/>
+                <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Third party libraries "
+                                                             android:padding="10dp"
+                                                             android:textStyle="italic"
+                                                             android:layout_below="@id/divider2"
+                                                             android:id="@+id/tv_libraries"/>
+            </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatTextView android:layout_width="wrap_content"
+                                                         android:layout_height="wrap_content"
+                                                         android:layout_alignParentStart="true"
+                                                         android:layout_below="@id/lyt_account"
+                                                         android:text="Other"
+                                                         android:layout_marginStart="15dp"
+                                                         android:layout_marginTop="10dp"
+                                                         android:layout_marginBottom="10dp"
+                                                         android:id="@+id/tv_acc_other"/>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_acc_other"
+                            android:id="@+id/lyt_other"
+                            android:background="@drawable/rounded_corners"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp">
+                <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Favorites"
+                                                             android:padding="10dp"
+                                                             android:id="@+id/tv_favorites"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                      android:layout_below="@id/tv_favorites"
+                      android:id="@+id/divider3" android:layout_marginStart="10dp"
+                      android:layout_marginEnd="10dp"/>
+                <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Downloads"
+                                                             android:padding="10dp"
+                                                             android:layout_below="@id/divider3"
+                                                             android:id="@+id/tv_downloads"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                      android:layout_below="@id/tv_downloads"
+                      android:id="@+id/divider4" android:layout_marginStart="10dp"
+                      android:layout_marginEnd="10dp"/>
+                <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Newsletter"
+                                                             android:padding="10dp"
+                                                             android:textStyle="italic"
+                                                             android:layout_below="@id/divider4"
+                                                             android:id="@+id/tv_newsletter"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                      android:layout_below="@id/tv_newsletter"
+                      android:id="@+id/divider5" android:layout_marginStart="10dp"
+                      android:layout_marginEnd="10dp"/>
+                <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Lorem ipsum dorem"
+                                                             android:padding="10dp"
+                                                             android:textStyle="italic"
+                                                             android:layout_below="@id/divider5"
+                                                             android:id="@+id/tv_tba"/>
+            </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:background="@drawable/rounded_corners"
+                                                         android:text="Log out"
+                                                         android:padding="10dp"
+                                                         android:layout_alignParentBottom="true"
+                                                         android:layout_marginTop="15dp"
+                                                         android:layout_marginStart="10dp"
+                                                         android:layout_marginEnd="10dp"
+                                                         android:layout_below="@id/lyt_other"/>
+        </RelativeLayout>
+
+    </ScrollView>
+</LinearLayout>

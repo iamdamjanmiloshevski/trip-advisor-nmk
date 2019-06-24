@@ -17,11 +17,13 @@ class AccountFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val fragmentView = getFragmentView(context, container, false, savedInstanceState)
-        setToolbar(activity!!.toolbar,"Account")
-        fragmentView.tv_title.apply {
-            text = "Account"
-        }
+        setToolbar(activity!!.toolbar, "Account")
         return fragmentView
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     override fun getLayoutId(): Int {
