@@ -4,16 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.internal.VisibilityAwareImageButton
 import com.iamdamjanmiloshevski.makedoniko.adapters.LandmarksRecyclerViewAdapter
 import com.iamdamjanmiloshevski.makedoniko.fragments.bases.BasePOIFragment
 import com.iamdamjanmiloshevski.makedoniko.models.Landmark
-import com.iamdamjanmiloshevski.makedoniko.viewmodels.pointsofinterest.SkopjePointsOfInterestViewModel
-import kotlinx.android.synthetic.main.tab_home_child.view.*
+import com.iamdamjanmiloshevski.makedoniko.viewmodels.landmarks.SkopjeLandmarksViewModel
 import kotlinx.android.synthetic.main.tab_home_child.view.progressbar
 import kotlinx.android.synthetic.main.tab_home_child.view.tv_no_data
 import kotlinx.android.synthetic.main.tab_poi_child.view.*
@@ -33,7 +29,7 @@ class SkopjePOIFragment : BasePOIFragment() {
     }
 
     override fun initComponents() {
-        mViewModel = ViewModelProviders.of(activity!!).get(SkopjePointsOfInterestViewModel::class.java)
+        mViewModel = ViewModelProviders.of(activity!!).get(SkopjeLandmarksViewModel::class.java)
         fragmentView.rv_landmarks.layoutManager = LinearLayoutManager(context)
         fragmentView.rv_landmarks.adapter = LandmarksRecyclerViewAdapter(context!!, landmarks)
         fragmentView.progressbar.visibility = View.VISIBLE
@@ -55,7 +51,7 @@ class SkopjePOIFragment : BasePOIFragment() {
         )
     }
 
-    private lateinit var mViewModel: SkopjePointsOfInterestViewModel
+    private lateinit var mViewModel: SkopjeLandmarksViewModel
     private lateinit var fragmentView: View
     private var landmarks: MutableList<Landmark> = mutableListOf()
 

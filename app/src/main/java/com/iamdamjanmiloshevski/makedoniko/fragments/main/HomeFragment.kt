@@ -28,7 +28,6 @@ class HomeFragment : BaseFragment() {
     private lateinit var mAdapter: ApplicationViewPagerAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = getFragmentView(context, container, false, savedInstanceState)
-        setToolbar(activity!!.toolbar,"Home")
         initAdapter()
         view.vp_home_pages.adapter = mAdapter
         view.vp_home_pages.offscreenPageLimit = HOME_PAGES

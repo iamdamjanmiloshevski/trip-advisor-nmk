@@ -1,9 +1,7 @@
 package com.iamdamjanmiloshevski.makedoniko.fragments.main
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import com.iamdamjanmiloshevski.makedoniko.R
 import com.iamdamjanmiloshevski.makedoniko.fragments.bases.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,13 +15,17 @@ class AccountFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val fragmentView = getFragmentView(context, container, false, savedInstanceState)
-        setToolbar(activity!!.toolbar, "Account")
         return fragmentView
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater?.inflate(R.menu.menu_account,menu)
+        menu!!.findItem(R.id.action_settings).isVisible = false
     }
 
     override fun getLayoutId(): Int {

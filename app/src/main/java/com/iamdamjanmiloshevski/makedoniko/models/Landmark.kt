@@ -7,6 +7,7 @@ Project: trip-advisor-nmk
  **/
 data class Landmark(
     var landmarkName: String = "",
+    var shortName: String = "",
     var landmarkDescription: String = "",
     var imageUrl: String = "",
     var coordinates: GeoPoint? = null,

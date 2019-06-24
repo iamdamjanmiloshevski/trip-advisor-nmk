@@ -1,4 +1,4 @@
-package com.iamdamjanmiloshevski.makedoniko.viewmodels.pointsofinterest
+package com.iamdamjanmiloshevski.makedoniko.viewmodels.landmarks
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -9,7 +9,7 @@ import com.iamdamjanmiloshevski.makedoniko.models.Landmark
 /** Created by Damjan on 23.6.2019
 Project: trip-advisor-nmk
  **/
-class SkopjePointsOfInterestViewModel():PointsOfInterestBaseViewModel(){
+class SkopjeLandmarksViewModel():LandmarksBaseViewModel(){
     override fun getLandmarksForCity(city: String,adapter:LandmarksRecyclerViewAdapter): LiveData<List<Landmark>> {
         mRepository.getLandmarksForCity(city).addSnapshotListener { value, e ->
             if (e != null) {

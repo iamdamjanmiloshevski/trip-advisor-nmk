@@ -4,12 +4,15 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fillViewport="true">
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="75dp">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
             <RelativeLayout android:layout_width="match_parent" android:layout_height="150dp"
-                            android:background="@drawable/ohrid" android:weightSum="3"
+                            android:background="@drawable/rounded_corners"
+                            android:weightSum="3"
+                            android:layout_margin="10dp"
                             android:id="@+id/lyt_header">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                               android:layout_alignParentBottom="true"
@@ -68,8 +71,11 @@
                                                              android:layout_height="wrap_content"
                                                              android:text="Password and security"
                                                              android:padding="10dp"
+                                                             android:textColor="#000"
+                                                             android:fontFamily="@font/amiko"
+                                                             android:textStyle="italic"
                                                              android:id="@+id/tv_pwd_security"/>
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#000"
                       android:layout_below="@id/tv_pwd_security"
                       android:id="@+id/divider0" android:layout_marginStart="10dp"
                       android:layout_marginEnd="10dp"/>
@@ -77,9 +83,12 @@
                                                              android:layout_height="wrap_content"
                                                              android:text="Privacy policy"
                                                              android:padding="10dp"
+                                                             android:textStyle="italic"
+                                                             android:textColor="#000"
+                                                             android:fontFamily="@font/amiko"
                                                              android:layout_below="@id/divider0"
                                                              android:id="@+id/tv_privacy"/>
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#000"
                       android:layout_below="@id/tv_privacy"
                       android:id="@+id/divider1" android:layout_marginStart="10dp"
                       android:layout_marginEnd="10dp"/>
@@ -88,9 +97,11 @@
                                                              android:text="Terms of Use"
                                                              android:padding="10dp"
                                                              android:textStyle="italic"
+                                                             android:textColor="#000"
+                                                             android:fontFamily="@font/amiko"
                                                              android:layout_below="@id/divider1"
                                                              android:id="@+id/tv_terms"/>
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#000"
                       android:layout_below="@id/tv_terms"
                       android:id="@+id/divider2" android:layout_marginStart="10dp"
                       android:layout_marginEnd="10dp"/>
@@ -99,6 +110,8 @@
                                                              android:text="Third party libraries "
                                                              android:padding="10dp"
                                                              android:textStyle="italic"
+                                                             android:textColor="#000"
+                                                             android:fontFamily="@font/amiko"
                                                              android:layout_below="@id/divider2"
                                                              android:id="@+id/tv_libraries"/>
             </RelativeLayout>
@@ -121,8 +134,11 @@
                                                              android:layout_height="wrap_content"
                                                              android:text="Favorites"
                                                              android:padding="10dp"
+                                                             android:textStyle="italic"
+                                                             android:textColor="#000"
+                                                             android:fontFamily="@font/amiko"
                                                              android:id="@+id/tv_favorites"/>
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#000"
                       android:layout_below="@id/tv_favorites"
                       android:id="@+id/divider3" android:layout_marginStart="10dp"
                       android:layout_marginEnd="10dp"/>
@@ -130,30 +146,25 @@
                                                              android:layout_height="wrap_content"
                                                              android:text="Downloads"
                                                              android:padding="10dp"
+                                                             android:textStyle="italic"
+                                                             android:textColor="#000"
+                                                             android:fontFamily="@font/amiko"
                                                              android:layout_below="@id/divider3"
                                                              android:id="@+id/tv_downloads"/>
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
+                <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#000"
                       android:layout_below="@id/tv_downloads"
                       android:id="@+id/divider4" android:layout_marginStart="10dp"
                       android:layout_marginEnd="10dp"/>
                 <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                              android:layout_height="wrap_content"
-                                                             android:text="Newsletter"
+                                                             android:text="Premium"
                                                              android:padding="10dp"
                                                              android:textStyle="italic"
+                                                             android:textColor="#000"
+                                                             android:fontFamily="@font/amiko"
                                                              android:layout_below="@id/divider4"
-                                                             android:id="@+id/tv_newsletter"/>
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#000"
-                      android:layout_below="@id/tv_newsletter"
-                      android:id="@+id/divider5" android:layout_marginStart="10dp"
-                      android:layout_marginEnd="10dp"/>
-                <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
-                                                             android:layout_height="wrap_content"
-                                                             android:text="Lorem ipsum dorem"
-                                                             android:padding="10dp"
-                                                             android:textStyle="italic"
-                                                             android:layout_below="@id/divider5"
-                                                             android:id="@+id/tv_tba"/>
+                                                             android:id="@+id/tv_premium"/>
+
             </RelativeLayout>
             <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                          android:layout_height="wrap_content"
@@ -164,6 +175,8 @@
                                                          android:layout_marginTop="15dp"
                                                          android:layout_marginStart="10dp"
                                                          android:layout_marginEnd="10dp"
+                                                         android:textColor="#000"
+                                                         android:fontFamily="@font/amiko_bold"
                                                          android:layout_below="@id/lyt_other"/>
         </RelativeLayout>
 

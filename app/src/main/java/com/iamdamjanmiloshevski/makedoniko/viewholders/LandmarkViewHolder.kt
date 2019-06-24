@@ -17,9 +17,8 @@ class LandmarkViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             Picasso.with(itemView.context)
                 .load(imageUrl)
                 .error(R.drawable.image_placeholder)
-                .placeholder(R.drawable.image_loader)
                 .into(itemView.iv_landmark_image)
-            itemView.tv_landmark_name.text = this.landmarkName
+            itemView.tv_landmark_name.text = this.shortName
             itemView.tv_landmark_text.text = this.landmarkDescription
         }
     }

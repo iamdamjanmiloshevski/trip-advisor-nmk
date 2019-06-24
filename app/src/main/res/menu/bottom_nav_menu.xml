@@ -2,25 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home"
-        android:title="Home" />
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home"/>
 
     <item
-        android:id="@+id/navigation_macedonia"
-        android:icon="@drawable/ic_macedonia"
-        android:title="Pts. of Interest" />
+            android:id="@+id/navigation_macedonia"
+            android:icon="@drawable/ic_landmark"
+            android:title="Landmarks"/>
 
     <item
-        android:id="@+id/navigation_about"
-        android:icon="@drawable/ic_info"
-        android:title="Useful info" />
-    <item
-            android:id="@+id/navigation_request_word"
-            android:icon="@drawable/ic_request_word"
-            android:title="Request a word" />
+            android:id="@+id/navigation_about"
+            android:icon="@drawable/ic_macedonia"
+            android:title="About"/>
+
     <item
             android:id="@+id/navigation_account"
             android:icon="@drawable/ic_account"
-            android:title="Account" />
+            android:title="Account"/>
 </menu>

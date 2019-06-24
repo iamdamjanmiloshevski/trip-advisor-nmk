@@ -24,7 +24,4 @@ abstract class BaseFragment : Fragment(){
     }
 
     abstract fun getLayoutId(): Int
-    fun setToolbar(toolbar: Toolbar, title: String) {
-        toolbar.tv_title.text = title
-    }
 }
