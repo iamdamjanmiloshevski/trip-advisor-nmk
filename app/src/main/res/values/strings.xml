@@ -10,4 +10,6 @@
     <string name="greetings_fragment_title">Greetings</string>
     <string name="most_used_fragment_title">Most Used</string>
     <string name="useful_phrases_fragment_title">Useful phrases</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="project_web_client_id" translatable="false">27550053835-ghjlgef0jcvo5hc13gk5p2j420vl7dsc.apps.googleusercontent.com</string>
 </resources>

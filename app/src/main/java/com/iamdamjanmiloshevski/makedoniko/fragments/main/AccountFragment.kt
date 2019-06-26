@@ -1,8 +1,10 @@
 package com.iamdamjanmiloshevski.makedoniko.fragments.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import com.iamdamjanmiloshevski.makedoniko.R
+import com.iamdamjanmiloshevski.makedoniko.activities.LoginActivity
 import com.iamdamjanmiloshevski.makedoniko.fragments.bases.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.tab_account.view.*
@@ -15,6 +17,9 @@ class AccountFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val fragmentView = getFragmentView(context, container, false, savedInstanceState)
+        fragmentView.tv_logout.setOnClickListener { v ->
+            context?.startActivity(Intent(context,LoginActivity::class.java))
+        }
         return fragmentView
     }
 

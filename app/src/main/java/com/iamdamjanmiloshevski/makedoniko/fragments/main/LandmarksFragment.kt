@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatSpinner
+import androidx.fragment.app.Fragment
 import com.iamdamjanmiloshevski.makedoniko.R
 import com.iamdamjanmiloshevski.makedoniko.fragments.bases.BaseFragment
 import com.iamdamjanmiloshevski.makedoniko.fragments.pointsofInterest.SkopjePOIFragment
@@ -37,10 +39,10 @@ class LandmarksFragment : BaseFragment() {
         ArrayAdapter.createFromResource(
             context!!,
          R.array.cities,
-            android.R.layout.simple_spinner_item
+            R.layout.landmarks_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.landmarks_spinner_dropdown_item)
             // Apply the adapter to the spinner
             spinner.adapter = adapter
             spinner.setSelection(0)
@@ -59,7 +61,7 @@ class LandmarksFragment : BaseFragment() {
         }
     }
 
-    private fun switchView(view: Int, fragment: androidx.fragment.app.Fragment) {
+    private fun switchView(view: Int, fragment: Fragment) {
         childFragmentManager.beginTransaction()
             .addToBackStack(null)
             .replace(view, fragment)
