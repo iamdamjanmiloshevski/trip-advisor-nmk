@@ -21,10 +21,6 @@ import kotlinx.android.synthetic.main.tab_home.view.*
 Project: TripAdvisorNorthMacedonia
  **/
 class HomeFragment : BaseFragment() {
-    override fun getLayoutId(): Int {
-        return R.layout.tab_home
-    }
-
     private lateinit var mAdapter: ApplicationViewPagerAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = getFragmentView(context, container, false, savedInstanceState)
@@ -42,7 +38,9 @@ class HomeFragment : BaseFragment() {
         mAdapter.addFragment(MostUsedPhrasesFragment.getInstance(), getString(R.string.most_used_fragment_title))
         mAdapter.addFragment(UsefulPhrasesFragment.getInstance(), getString(R.string.useful_phrases_fragment_title))
     }
-
+    override fun getLayoutId(): Int {
+        return R.layout.tab_home
+    }
     companion object {
         fun getInstance(): HomeFragment {
             return HomeFragment()

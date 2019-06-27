@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.tab_macedonia.view.*
 Project: TripAdvisorNorthMacedonia
  **/
 class AboutMacedoniaFragment : BaseFragment() {
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val fragmentView = getFragmentView(context, container, false, savedInstanceState)
         fragmentView.web_view.webChromeClient = WebChromeClient()

@@ -1,25 +1,33 @@
 package com.iamdamjanmiloshevski.makedoniko.fragments.main
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.view.*
+import androidx.fragment.app.FragmentActivity
 import com.iamdamjanmiloshevski.makedoniko.R
-import com.iamdamjanmiloshevski.makedoniko.activities.LoginActivity
 import com.iamdamjanmiloshevski.makedoniko.fragments.bases.BaseFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import com.iamdamjanmiloshevski.makedoniko.managers.FirebaseLoginManager
+import com.iamdamjanmiloshevski.makedoniko.managers.SharedPreferencesManager
 import kotlinx.android.synthetic.main.tab_account.view.*
 
 
 /** Created by Damjan on 09.6.2019
 Project: TripAdvisorNorthMacedonia
  **/
-class AccountFragment : BaseFragment() {
+class AccountFragment : BaseFragment(), View.OnClickListener {
+    override fun onClick(v: View?) {
+        when (v!!.id) {
+            R.id.tv_logout -> {
+                val isLoggedInWithGoogle = SharedPreferencesManager.getInstance(context!!).isLoggedInWithGoogle()
+                FirebaseLoginManager.getInstance(context!!)
+                    .logout(activity as FragmentActivity, isLoggedInWithGoogle)
+            }
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val fragmentView = getFragmentView(context, container, false, savedInstanceState)
-        fragmentView.tv_logout.setOnClickListener { v ->
-            context?.startActivity(Intent(context,LoginActivity::class.java))
-        }
+        fragmentView.tv_logout.setOnClickListener(this)
         return fragmentView
     }
 
@@ -29,7 +37,7 @@ class AccountFragment : BaseFragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater?.inflate(R.menu.menu_account,menu)
+        inflater?.inflate(R.menu.menu_account, menu)
         menu!!.findItem(R.id.action_settings).isVisible = false
     }
 
