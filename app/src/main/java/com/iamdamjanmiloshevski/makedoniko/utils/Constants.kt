@@ -19,9 +19,12 @@ object Constants {
     //Session
     const val GOOGLE_SIGN_IN = "google_sign_in"
     const val IS_SIGNED_IN = "is_signed_in"
+    const val USER_ID = "uid"
 
     //Errors
     const val GOOGLE_SIGN_FAILED = 1000
     const val FIREBASE_LOGIN_ERROR_NO_PASSWORD = 1001
     const val FIREBASE_LOGIN_ERROR_NO_SUCH_USER = 1002
+    const val FIREBASE_LOGIN_ERROR_EMAIL_BAD_FORMAT = 1003
+    const val FIREBASE_SIGNUP_ERROR_EMAIL_ALREADY_USED = 1004
 }

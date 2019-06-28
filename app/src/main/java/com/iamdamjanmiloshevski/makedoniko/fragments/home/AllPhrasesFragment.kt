@@ -61,6 +61,7 @@ class AllPhrasesFragment : BaseHomeFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         removeObservers()
+        mViewModel.detachListener()
     }
 
     companion object {

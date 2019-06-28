@@ -65,6 +65,7 @@ class SkopjePOIFragment : BasePOIFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         removeObservers()
+        mViewModel.removeListener()
     }
 
     companion object {

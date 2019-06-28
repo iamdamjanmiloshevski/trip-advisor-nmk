@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.GOOGLE_SIGN_IN
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.IS_SIGNED_IN
+import com.iamdamjanmiloshevski.makedoniko.utils.Constants.USER_ID
 
 /** Created by Damjan on 26.6.2019
 Project: trip-advisor-nmk
@@ -24,6 +25,10 @@ class SharedPreferencesManager(context: Context) {
         val editor = sharedPrefs!!.edit()
         editor.putBoolean(IS_SIGNED_IN, isLoggedIn).apply()
     }
+    fun setUserId(uid:String){
+        val editor = sharedPrefs!!.edit()
+        editor.putString(USER_ID,uid).apply()
+    }
 
     fun isLoggedInWithGoogle(): Boolean {
         return sharedPrefs!!.getBoolean(GOOGLE_SIGN_IN, false)
@@ -32,7 +37,9 @@ class SharedPreferencesManager(context: Context) {
     fun isSignedIn(): Boolean {
         return sharedPrefs!!.getBoolean(IS_SIGNED_IN, false)
     }
-
+    fun getUID():String?{
+        return sharedPrefs!!.getString(USER_ID,"")
+    }
     companion object {
         const val SHARED_PREF = "app_session"
         private var INSTANCE: SharedPreferencesManager? = null

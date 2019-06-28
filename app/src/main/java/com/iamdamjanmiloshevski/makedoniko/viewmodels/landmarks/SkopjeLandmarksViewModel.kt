@@ -3,6 +3,7 @@ package com.iamdamjanmiloshevski.makedoniko.viewmodels.landmarks
 import android.util.Log
 import androidx.lifecycle.LiveData
 import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.ListenerRegistration
 import com.iamdamjanmiloshevski.makedoniko.adapters.LandmarksRecyclerViewAdapter
 import com.iamdamjanmiloshevski.makedoniko.models.Landmark
 
@@ -10,8 +11,9 @@ import com.iamdamjanmiloshevski.makedoniko.models.Landmark
 Project: trip-advisor-nmk
  **/
 class SkopjeLandmarksViewModel():LandmarksBaseViewModel(){
+    private var eventListener:ListenerRegistration? = null
     override fun getLandmarksForCity(city: String,adapter:LandmarksRecyclerViewAdapter): LiveData<List<Landmark>> {
-        mRepository.getLandmarksForCity(city).addSnapshotListener { value, e ->
+        eventListener = mRepository.getLandmarksForCity(city).addSnapshotListener { value, e ->
             if (e != null) {
                 Log.w("TAG", "Listen failed", e)
                 landmarks.value = null
@@ -51,5 +53,7 @@ class SkopjeLandmarksViewModel():LandmarksBaseViewModel(){
         }
         return landmarks
     }
-
+    fun removeListener(){
+        eventListener?.remove()
+    }
 }

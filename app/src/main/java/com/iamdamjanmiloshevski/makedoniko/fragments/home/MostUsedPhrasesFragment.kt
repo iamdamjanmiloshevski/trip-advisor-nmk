@@ -65,6 +65,7 @@ class MostUsedPhrasesFragment : BaseHomeFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         removeObservers()
+        mViewModel.detachListener()
     }
     companion object {
         const val TAG = "MostUsedPhrasesFragment"

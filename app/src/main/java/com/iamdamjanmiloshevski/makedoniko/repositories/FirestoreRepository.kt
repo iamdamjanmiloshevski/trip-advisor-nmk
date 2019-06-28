@@ -2,12 +2,14 @@ package com.iamdamjanmiloshevski.makedoniko.repositories
 
 
 import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.CATEGORY
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.CITY_NAME
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.LANDMARKS_COLLECTION
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.PHRASES_COLLECTION
+import com.iamdamjanmiloshevski.makedoniko.utils.Constants.USERS
 
 /** Created by Damjan on 10.6.2019
 Project: trip-advisor-nmk
@@ -35,5 +37,9 @@ class FirestoreRepository {
 
     fun getLandmarksForCity(city: String): Query {
         return database.collection(LANDMARKS_COLLECTION).whereEqualTo(CITY_NAME, city)
+    }
+
+    fun getUser(uid: String): DocumentReference {
+        return database.collection(USERS).document(uid)
     }
 }

@@ -5,5 +5,7 @@ Project: trip-advisor-nmk
  **/
 interface FirebaseLoginListener {
     fun displayError(type: Int)
-    fun displayGoogleSignInFailed(type:Int)
+    fun displayGoogleSignInFailed(type: Int)
+    fun displayLoadingBar()
+    fun hideLoadingBar()
 }

@@ -23,7 +23,6 @@
                               android:layout_toStartOf="@id/iv_user_avatar">
                     <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                                  android:layout_height="0dp"
-                                                                 android:text="Damjan Miloshevski"
                                                                  android:textSize="24sp"
                                                                  android:gravity="center"
                                                                  android:textColor="#000"
@@ -32,7 +31,6 @@
                                                                  android:layout_weight="1"/>
                     <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
                                                                  android:layout_height="0dp"
-                                                                 android:text="d.miloshevski@gmail.com"
                                                                  android:textSize="18sp"
                                                                  android:gravity="center"
                                                                  android:textColor="#000"
@@ -47,8 +45,7 @@
                                                               android:layout_centerVertical="true"
                                                               android:layout_marginBottom="15dp"
                                                               android:layout_marginEnd="10dp"
-                                                              android:id="@+id/iv_user_avatar"
-                                                              android:src="@drawable/ic_account"/>
+                                                              android:id="@+id/iv_user_avatar"/>
             </RelativeLayout>
 
 
