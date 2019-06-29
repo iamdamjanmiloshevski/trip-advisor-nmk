@@ -1,9 +1,7 @@
 package com.iamdamjanmiloshevski.makedoniko.fragments.main
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -25,6 +23,16 @@ class AboutMacedoniaFragment : BaseFragment() {
         fragmentView.web_view.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
         fragmentView.web_view.loadUrl("https://www.lonelyplanet.com/macedonia")
         return fragmentView
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        menu?.findItem(R.id.action_settings)?.isVisible = false
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun getLayoutId(): Int {

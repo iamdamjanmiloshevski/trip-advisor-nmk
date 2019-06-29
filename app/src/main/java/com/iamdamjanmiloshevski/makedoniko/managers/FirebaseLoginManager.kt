@@ -27,6 +27,9 @@ import com.iamdamjanmiloshevski.makedoniko.utils.Constants.FIREBASE_SIGNUP_ERROR
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.GOOGLE_SIGN_FAILED
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.RC_SIGN_IN
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.USERS
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 /** Created by Damjan on 25.6.2019
@@ -171,12 +174,26 @@ class FirebaseLoginManager(context: Context) {
         }
     }
 
-    fun changePassword(email: String, newPassword: String) {
+    fun changePassword(
+        context: Context,
+        email: String,
+        newPassword: String,
+        firebaseLoginListener: FirebaseLoginListener,
+        screenListener: ScreenListener
+    ) {
         val credential = EmailAuthProvider.getCredential(email, newPassword)
         val auth = FirebaseAuth.getInstance()
         auth.currentUser!!.reauthenticate(credential).addOnSuccessListener {
-
+            Timber.i("User re-authenticated")
+            context.showToast("Password successfully changed. You can sign-in now")
+            GlobalScope.launch {
+                delay(2000L)
+                screenListener.openLogin()
+            }
         }.addOnFailureListener { e ->
+//            when(e.localizedMessage){
+//
+//            }
             Timber.e(e)
         }
     }

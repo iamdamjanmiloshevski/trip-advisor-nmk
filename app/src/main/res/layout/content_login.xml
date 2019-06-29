@@ -12,10 +12,10 @@
     <ProgressBar android:layout_width="60dp" android:layout_height="60dp"
                  android:layout_centerInParent="true"
                  android:id="@+id/progressbar"
-    android:visibility="gone"/>
+                 android:visibility="gone"/>
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="match_parent"
-    android:id="@+id/lyt_data">
+                    android:id="@+id/lyt_data">
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:layout_marginTop="150dp"
@@ -64,6 +64,7 @@
                                                      android:layout_marginStart="30dp"
                                                      android:layout_marginTop="10dp"
                                                      android:id="@+id/tv_reset_pass"
+                                                     android:visibility="gone"
                                                      android:layout_below="@id/lyt_credentials"/>
 
         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
