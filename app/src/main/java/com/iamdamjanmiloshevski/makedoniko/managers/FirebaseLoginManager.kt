@@ -176,28 +176,15 @@ class FirebaseLoginManager(context: Context) {
 
     fun changePassword(
         context: Context,
-        email: String,
-        newPassword: String,
-        firebaseLoginListener: FirebaseLoginListener,
-        screenListener: ScreenListener
+        email: String
     ) {
-        val credential = EmailAuthProvider.getCredential(email, newPassword)
         val auth = FirebaseAuth.getInstance()
-        auth.currentUser!!.reauthenticate(credential).addOnSuccessListener {
-            Timber.i("User re-authenticated")
-            context.showToast("Password successfully changed. You can sign-in now")
-            GlobalScope.launch {
-                delay(2000L)
-                screenListener.openLogin()
+        auth.sendPasswordResetEmail(email).addOnCompleteListener {task ->
+            if(task.isSuccessful){
+                context.showToast("Email sent successfully",Toast.LENGTH_SHORT)
             }
-        }.addOnFailureListener { e ->
-//            when(e.localizedMessage){
-//
-//            }
-            Timber.e(e)
         }
     }
-
     companion object {
         private var INSTANCE: FirebaseLoginManager? = null
 

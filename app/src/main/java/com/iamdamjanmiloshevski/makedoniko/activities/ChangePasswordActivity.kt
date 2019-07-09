@@ -144,8 +144,7 @@ class ChangePasswordActivity : BaseActivity(), FirebaseLoginListener, ScreenList
         } else {
             if (!cancel) {
                 FirebaseLoginManager.getInstance(this).changePassword(
-                    this, email, newPassword,
-                    this, this
+                    this, email
                 )
             }
         }

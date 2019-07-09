@@ -64,7 +64,7 @@
                                                      android:layout_marginStart="30dp"
                                                      android:layout_marginTop="10dp"
                                                      android:id="@+id/tv_reset_pass"
-                                                     android:visibility="gone"
+                                                     android:visibility="visible"
                                                      android:layout_below="@id/lyt_credentials"/>
 
         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
