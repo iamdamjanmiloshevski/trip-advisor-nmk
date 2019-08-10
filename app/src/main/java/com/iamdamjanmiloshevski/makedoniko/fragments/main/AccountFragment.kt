@@ -30,7 +30,7 @@ class AccountFragment : BaseFragment(), View.OnClickListener, Observer<User>, Sc
 
     override fun openLogin() {
         startActivity(Intent(context!!, LoginActivity::class.java))
-        activity!!.finish()
+        activity?.finish()
     }
 
     private fun registerObservers() {

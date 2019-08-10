@@ -26,7 +26,7 @@ class GreetingsFragment : BaseHomeFragment() {
      * @param data  The new data
      */
     override fun onChanged(data: List<Phrase>?) {
-       fragmentView.progressbar.visibility=View.VISIBLE
+        fragmentView.progressbar.visibility = View.VISIBLE
         getData(
             fragmentView.rv_phrases,
             fragmentView.rv_phrases.adapter as PhrasesRecyclerViewAdapter,
@@ -38,7 +38,7 @@ class GreetingsFragment : BaseHomeFragment() {
     }
 
     override fun registerObservers() {
-        mViewModel.getPhrasesByCategory(0).observe(this,this)
+        mViewModel.getPhrasesByCategory(0).observe(this, this)
     }
 
     override fun initComponents() {
@@ -46,8 +46,8 @@ class GreetingsFragment : BaseHomeFragment() {
         fragmentView.rv_phrases.layoutManager = LinearLayoutManager(context)
         fragmentView.rv_phrases.adapter = PhrasesRecyclerViewAdapter(context!!, phrases)
         fragmentView.progressbar.visibility = View.VISIBLE
-        if(phrases.isEmpty()){
-            fragmentView.progressbar.visibility=View.GONE
+        if (phrases.isEmpty()) {
+            fragmentView.progressbar.visibility = View.GONE
             showNoData(true, fragmentView.rv_phrases, fragmentView.tv_no_data)
         }
     }
@@ -64,13 +64,13 @@ class GreetingsFragment : BaseHomeFragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        removeObservers()
         mViewModel.detachListener()
+        removeObservers()
     }
 
     companion object {
         const val TAG = "GreetingsFragment"
-        fun getInstance(): GreetingsFragment{
+        fun getInstance(): GreetingsFragment {
             return GreetingsFragment()
         }
     }

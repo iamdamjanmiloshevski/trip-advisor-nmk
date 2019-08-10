@@ -10,7 +10,7 @@ import com.iamdamjanmiloshevski.makedoniko.models.Landmark
 /** Created by Damjan on 23.6.2019
 Project: trip-advisor-nmk
  **/
-class SkopjeLandmarksViewModel():LandmarksBaseViewModel(){
+class SkopjeLandmarksViewModel :LandmarksBaseViewModel(){
     private var eventListener:ListenerRegistration? = null
     override fun getLandmarksForCity(city: String,adapter:LandmarksRecyclerViewAdapter): LiveData<List<Landmark>> {
         eventListener = mRepository.getLandmarksForCity(city).addSnapshotListener { value, e ->
@@ -19,36 +19,38 @@ class SkopjeLandmarksViewModel():LandmarksBaseViewModel(){
                 landmarks.value = null
             }
             val landmarksList: MutableList<Landmark> = mutableListOf()
-            for (doc in value!!.documentChanges) {
-                val landmark = doc.document.toObject(Landmark::class.java)
-                when (doc.type) {
-                    DocumentChange.Type.ADDED -> {
-                        if (!landmarksList.contains(landmark)) {
-                            landmarksList.add(landmark)
-                        }
-                        adapter.notifyDataSetChanged()
-                    }
-                    DocumentChange.Type.MODIFIED -> {
-                        for (i in landmarksList.indices) {
-                            val p = landmarksList[i]
-                            if (p == landmark) {
-                                landmarksList[i] = landmark
+            value.let {
+                for (doc in it!!.documentChanges) {
+                    val landmark = doc.document.toObject(Landmark::class.java)
+                    when (doc.type) {
+                        DocumentChange.Type.ADDED -> {
+                            if (!landmarksList.contains(landmark)) {
+                                landmarksList.add(landmark)
                             }
+                            adapter.notifyDataSetChanged()
                         }
-                        adapter.notifyDataSetChanged()
-                    }
-                    DocumentChange.Type.REMOVED -> {
-                        for (p in landmarksList) {
-                            if (p == landmark) {
-                                landmarksList.remove(landmark)
+                        DocumentChange.Type.MODIFIED -> {
+                            for (i in landmarksList.indices) {
+                                val p = landmarksList[i]
+                                if (p == landmark) {
+                                    landmarksList[i] = landmark
+                                }
                             }
+                            adapter.notifyDataSetChanged()
                         }
-                        adapter.notifyDataSetChanged()
+                        DocumentChange.Type.REMOVED -> {
+                            for (p in landmarksList) {
+                                if (p == landmark) {
+                                    landmarksList.remove(landmark)
+                                }
+                            }
+                            adapter.notifyDataSetChanged()
+                        }
                     }
                 }
-            }
-            if (landmarksList.isNotEmpty()) {
-                landmarks.value = landmarksList
+                if (landmarksList.isNotEmpty()) {
+                    landmarks.value = landmarksList
+                }
             }
         }
         return landmarks

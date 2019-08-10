@@ -67,8 +67,6 @@ class LandmarksFragment : BaseFragment() {
             .replace(view, fragment)
             .commit()
     }
-
-
     override fun getLayoutId(): Int {
         return R.layout.tab_poi
     }

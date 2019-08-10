@@ -18,6 +18,7 @@ import com.iamdamjanmiloshevski.makedoniko.activities.LoginActivity
 import com.iamdamjanmiloshevski.makedoniko.activities.MainActivity
 import com.iamdamjanmiloshevski.makedoniko.extensions.showToast
 import com.iamdamjanmiloshevski.makedoniko.listeners.FirebaseLoginListener
+import com.iamdamjanmiloshevski.makedoniko.listeners.ResetEmailSuccessListener
 import com.iamdamjanmiloshevski.makedoniko.listeners.ScreenListener
 import com.iamdamjanmiloshevski.makedoniko.models.User
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.FIREBASE_LOGIN_ERROR_EMAIL_BAD_FORMAT
@@ -174,14 +175,14 @@ class FirebaseLoginManager(context: Context) {
         }
     }
 
-    fun changePassword(
-        context: Context,
-        email: String
+    fun sendResetPasswordEmail(
+        email: String,
+        resetEmailSuccessListener: ResetEmailSuccessListener
     ) {
         val auth = FirebaseAuth.getInstance()
         auth.sendPasswordResetEmail(email).addOnCompleteListener {task ->
             if(task.isSuccessful){
-                context.showToast("Email sent successfully",Toast.LENGTH_SHORT)
+                resetEmailSuccessListener.displayMessage("Email sent successfully")
             }
         }
     }

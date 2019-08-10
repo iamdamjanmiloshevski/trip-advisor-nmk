@@ -11,11 +11,14 @@ import android.view.View
 import android.view.View.*
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.text.HtmlCompat
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.input.input
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
 import com.iamdamjanmiloshevski.makedoniko.R
 import com.iamdamjanmiloshevski.makedoniko.extensions.showToast
 import com.iamdamjanmiloshevski.makedoniko.listeners.FirebaseLoginListener
+import com.iamdamjanmiloshevski.makedoniko.listeners.ResetEmailSuccessListener
 import com.iamdamjanmiloshevski.makedoniko.listeners.ScreenListener
 import com.iamdamjanmiloshevski.makedoniko.managers.FirebaseLoginManager
 import com.iamdamjanmiloshevski.makedoniko.utils.Constants.FIREBASE_LOGIN_ERROR_EMAIL_BAD_FORMAT
@@ -27,7 +30,16 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.content_login.*
 import timber.log.Timber
 
-class LoginActivity : BaseActivity(), OnClickListener, FirebaseLoginListener, ScreenListener {
+class LoginActivity : BaseActivity(), OnClickListener, FirebaseLoginListener, ScreenListener,
+    ResetEmailSuccessListener {
+    override fun displayMessage(text: String) {
+        MaterialDialog(this).show {
+            title(null, "Reset password")
+            message(null, text)
+            positiveButton(text = "Dismiss") { dialog -> dialog.dismiss() }
+        }
+    }
+
     override fun openMain() {
         startActivity(Intent(this, MainActivity::class.java))
         finish()
@@ -72,7 +84,19 @@ class LoginActivity : BaseActivity(), OnClickListener, FirebaseLoginListener, Sc
                 startActivity(Intent(this, RegisterActivity::class.java))
                 finish()
             }
-            R.id.tv_reset_pass -> startActivity(Intent(this,ChangePasswordActivity::class.java))
+            R.id.tv_reset_pass -> {
+                MaterialDialog(this).show {
+                    title(null, "Reset your passsword")
+                    input(hint = "Enter your email") { dialog, text ->
+                        // Text submitted with the action button
+                        val email = text.toString()
+                        FirebaseLoginManager.getInstance(dialog.context)
+                            .sendResetPasswordEmail(email, this@LoginActivity)
+                        dialog.dismiss()
+                    }
+                    positiveButton(R.string.send_string)
+                }
+            }
         }
     }
 

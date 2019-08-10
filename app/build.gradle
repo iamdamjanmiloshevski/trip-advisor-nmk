@@ -47,6 +47,9 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     //Timber Logger
     implementation 'com.jakewharton.timber:timber:4.7.1'
+    //Material Dialogs
+    implementation 'com.afollestad.material-dialogs:core:3.1.0'
+    implementation 'com.afollestad.material-dialogs:input:3.1.0'
 
 }
 apply plugin: 'com.google.gms.google-services'
